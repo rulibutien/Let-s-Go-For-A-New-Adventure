@@ -1,0 +1,16 @@
+[
+{
+  "modid": "lgfana",
+  "name": "Let's Go For A New Adventure",
+  "description": "Mod used to start the adventure when you'll be ready !!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Rulibutien"],
+  "credits": "The Forge and FML guys, mcforgefr",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

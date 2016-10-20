@@ -20,16 +20,15 @@ import rulibutien.lgfana.event.PlacingBlock;
 import rulibutien.lgfana.gen.LgfanaSpawnGenerator;
 import rulibutien.lgfana.proxy.CommonProxy;
 
-import static rulibutien.lgfana.common.Lgfana.*;
+import static rulibutien.lgfana.common.Lgfana.MODID;
 
 
-@Mod(modid = MODID, name = MODNAME, version = MODVERSION, acceptableRemoteVersions = "*")
+@Mod(modid = MODID, acceptableRemoteVersions = "*")
 public class Lgfana {
 
+    public static final String MODID = "lgfana";
+
     public static final String GAMERULE_GO = "lgfanaGo";
-    static final String MODID = "lgfana";
-    static final String MODNAME = "Let's Go For A New Adventure";
-    static final String MODVERSION = "1.0.1";
     private static final String GAMERULE_SETUP = "lgfanaSetUp";
 
     @Instance(MODID)

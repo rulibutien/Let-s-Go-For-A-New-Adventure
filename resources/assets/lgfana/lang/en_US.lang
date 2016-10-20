@@ -1,0 +1,6 @@
+commands.lgfana.usage=/lgfana [reset]
+commands.lgfana.error.go=The adventure has alredy started !
+commands.lgfana.success.go=Let's go for a new adventure !
+commands.lgfana.success.reset=The adventure has restared !
+commands.lgfana.pending.go=The adventure is about to start...
+commands.lgfana.pending.reset=The adventure is restarting...

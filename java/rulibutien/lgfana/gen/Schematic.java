@@ -3,9 +3,9 @@ package rulibutien.lgfana.gen;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 
-public class Schematic {
+class Schematic {
 
-    public static void spawn(World world, int i, int j, int k) {
+    static void spawn(World world, int i, int j, int k) {
 
         int x = i - 10;
         int y = j - 25;
@@ -3398,10 +3398,10 @@ public class Schematic {
         world.setBlock(x + 12, y + 23, z + 28, Block.getBlockById(1));
         world.setBlock(x + 13, y + 23, z + 28, Block.getBlockById(1));
         world.setBlock(x + 14, y + 23, z + 28, Block.getBlockById(1));
-        world.setBlock(x + 9, y + 24, z + 0, Block.getBlockById(2));
-        world.setBlock(x + 10, y + 24, z + 0, Block.getBlockById(2));
-        world.setBlock(x + 11, y + 24, z + 0, Block.getBlockById(2));
-        world.setBlock(x + 12, y + 24, z + 0, Block.getBlockById(2));
+        world.setBlock(x + 9, y + 24, z, Block.getBlockById(2));
+        world.setBlock(x + 10, y + 24, z, Block.getBlockById(2));
+        world.setBlock(x + 11, y + 24, z, Block.getBlockById(2));
+        world.setBlock(x + 12, y + 24, z, Block.getBlockById(2));
         world.setBlock(x + 8, y + 24, z + 1, Block.getBlockById(2));
         world.setBlock(x + 9, y + 24, z + 1, Block.getBlockById(2));
         world.setBlock(x + 10, y + 24, z + 1, Block.getBlockById(2));
@@ -3567,7 +3567,7 @@ public class Schematic {
         world.setBlock(x + 22, y + 24, z + 10, Block.getBlockById(2));
         world.setBlock(x + 23, y + 24, z + 10, Block.getBlockById(2));
         world.setBlock(x + 24, y + 24, z + 10, Block.getBlockById(2));
-        world.setBlock(x + 0, y + 24, z + 11, Block.getBlockById(2));
+        world.setBlock(x, y + 24, z + 11, Block.getBlockById(2));
         world.setBlock(x + 1, y + 24, z + 11, Block.getBlockById(2));
         world.setBlock(x + 2, y + 24, z + 11, Block.getBlockById(2));
         world.setBlock(x + 3, y + 24, z + 11, Block.getBlockById(2));
@@ -3592,7 +3592,7 @@ public class Schematic {
         world.setBlock(x + 22, y + 24, z + 11, Block.getBlockById(2));
         world.setBlock(x + 23, y + 24, z + 11, Block.getBlockById(2));
         world.setBlock(x + 24, y + 24, z + 11, Block.getBlockById(2));
-        world.setBlock(x + 0, y + 24, z + 12, Block.getBlockById(2));
+        world.setBlock(x, y + 24, z + 12, Block.getBlockById(2));
         world.setBlock(x + 1, y + 24, z + 12, Block.getBlockById(2));
         world.setBlock(x + 2, y + 24, z + 12, Block.getBlockById(2));
         world.setBlock(x + 3, y + 24, z + 12, Block.getBlockById(2));
@@ -3617,7 +3617,7 @@ public class Schematic {
         world.setBlock(x + 22, y + 24, z + 12, Block.getBlockById(2));
         world.setBlock(x + 23, y + 24, z + 12, Block.getBlockById(2));
         world.setBlock(x + 24, y + 24, z + 12, Block.getBlockById(2));
-        world.setBlock(x + 0, y + 24, z + 13, Block.getBlockById(2));
+        world.setBlock(x, y + 24, z + 13, Block.getBlockById(2));
         world.setBlock(x + 1, y + 24, z + 13, Block.getBlockById(2));
         world.setBlock(x + 2, y + 24, z + 13, Block.getBlockById(2));
         world.setBlock(x + 3, y + 24, z + 13, Block.getBlockById(2));
@@ -3642,7 +3642,7 @@ public class Schematic {
         world.setBlock(x + 22, y + 24, z + 13, Block.getBlockById(2));
         world.setBlock(x + 23, y + 24, z + 13, Block.getBlockById(2));
         world.setBlock(x + 24, y + 24, z + 13, Block.getBlockById(2));
-        world.setBlock(x + 0, y + 24, z + 14, Block.getBlockById(2));
+        world.setBlock(x, y + 24, z + 14, Block.getBlockById(2));
         world.setBlock(x + 1, y + 24, z + 14, Block.getBlockById(2));
         world.setBlock(x + 2, y + 24, z + 14, Block.getBlockById(2));
         world.setBlock(x + 3, y + 24, z + 14, Block.getBlockById(2));
@@ -3668,7 +3668,7 @@ public class Schematic {
         world.setBlock(x + 23, y + 24, z + 14, Block.getBlockById(2));
         world.setBlock(x + 24, y + 24, z + 14, Block.getBlockById(2));
         world.setBlock(x + 25, y + 24, z + 14, Block.getBlockById(2));
-        world.setBlock(x + 0, y + 24, z + 15, Block.getBlockById(2));
+        world.setBlock(x, y + 24, z + 15, Block.getBlockById(2));
         world.setBlock(x + 1, y + 24, z + 15, Block.getBlockById(2));
         world.setBlock(x + 2, y + 24, z + 15, Block.getBlockById(2));
         world.setBlock(x + 3, y + 24, z + 15, Block.getBlockById(2));
@@ -3941,7 +3941,7 @@ public class Schematic {
     }
 
 
-    public static void deSpawn(World world, int i, int j, int k) {
+    static void deSpawn(World world, int i, int j, int k) {
 
         int x = i - 10;
         int y = j - 25;
@@ -7334,10 +7334,10 @@ public class Schematic {
         world.setBlock(x + 12, y + 23, z + 28, Block.getBlockById(0));
         world.setBlock(x + 13, y + 23, z + 28, Block.getBlockById(0));
         world.setBlock(x + 14, y + 23, z + 28, Block.getBlockById(0));
-        world.setBlock(x + 9, y + 24, z + 0, Block.getBlockById(0));
-        world.setBlock(x + 10, y + 24, z + 0, Block.getBlockById(0));
-        world.setBlock(x + 11, y + 24, z + 0, Block.getBlockById(0));
-        world.setBlock(x + 12, y + 24, z + 0, Block.getBlockById(0));
+        world.setBlock(x + 9, y + 24, z, Block.getBlockById(0));
+        world.setBlock(x + 10, y + 24, z, Block.getBlockById(0));
+        world.setBlock(x + 11, y + 24, z, Block.getBlockById(0));
+        world.setBlock(x + 12, y + 24, z, Block.getBlockById(0));
         world.setBlock(x + 8, y + 24, z + 1, Block.getBlockById(0));
         world.setBlock(x + 9, y + 24, z + 1, Block.getBlockById(0));
         world.setBlock(x + 10, y + 24, z + 1, Block.getBlockById(0));
@@ -7503,7 +7503,7 @@ public class Schematic {
         world.setBlock(x + 22, y + 24, z + 10, Block.getBlockById(0));
         world.setBlock(x + 23, y + 24, z + 10, Block.getBlockById(0));
         world.setBlock(x + 24, y + 24, z + 10, Block.getBlockById(0));
-        world.setBlock(x + 0, y + 24, z + 11, Block.getBlockById(0));
+        world.setBlock(x, y + 24, z + 11, Block.getBlockById(0));
         world.setBlock(x + 1, y + 24, z + 11, Block.getBlockById(0));
         world.setBlock(x + 2, y + 24, z + 11, Block.getBlockById(0));
         world.setBlock(x + 3, y + 24, z + 11, Block.getBlockById(0));
@@ -7528,7 +7528,7 @@ public class Schematic {
         world.setBlock(x + 22, y + 24, z + 11, Block.getBlockById(0));
         world.setBlock(x + 23, y + 24, z + 11, Block.getBlockById(0));
         world.setBlock(x + 24, y + 24, z + 11, Block.getBlockById(0));
-        world.setBlock(x + 0, y + 24, z + 12, Block.getBlockById(0));
+        world.setBlock(x, y + 24, z + 12, Block.getBlockById(0));
         world.setBlock(x + 1, y + 24, z + 12, Block.getBlockById(0));
         world.setBlock(x + 2, y + 24, z + 12, Block.getBlockById(0));
         world.setBlock(x + 3, y + 24, z + 12, Block.getBlockById(0));
@@ -7553,7 +7553,7 @@ public class Schematic {
         world.setBlock(x + 22, y + 24, z + 12, Block.getBlockById(0));
         world.setBlock(x + 23, y + 24, z + 12, Block.getBlockById(0));
         world.setBlock(x + 24, y + 24, z + 12, Block.getBlockById(0));
-        world.setBlock(x + 0, y + 24, z + 13, Block.getBlockById(0));
+        world.setBlock(x, y + 24, z + 13, Block.getBlockById(0));
         world.setBlock(x + 1, y + 24, z + 13, Block.getBlockById(0));
         world.setBlock(x + 2, y + 24, z + 13, Block.getBlockById(0));
         world.setBlock(x + 3, y + 24, z + 13, Block.getBlockById(0));
@@ -7578,7 +7578,7 @@ public class Schematic {
         world.setBlock(x + 22, y + 24, z + 13, Block.getBlockById(0));
         world.setBlock(x + 23, y + 24, z + 13, Block.getBlockById(0));
         world.setBlock(x + 24, y + 24, z + 13, Block.getBlockById(0));
-        world.setBlock(x + 0, y + 24, z + 14, Block.getBlockById(0));
+        world.setBlock(x, y + 24, z + 14, Block.getBlockById(0));
         world.setBlock(x + 1, y + 24, z + 14, Block.getBlockById(0));
         world.setBlock(x + 2, y + 24, z + 14, Block.getBlockById(0));
         world.setBlock(x + 3, y + 24, z + 14, Block.getBlockById(0));
@@ -7604,7 +7604,7 @@ public class Schematic {
         world.setBlock(x + 23, y + 24, z + 14, Block.getBlockById(0));
         world.setBlock(x + 24, y + 24, z + 14, Block.getBlockById(0));
         world.setBlock(x + 25, y + 24, z + 14, Block.getBlockById(0));
-        world.setBlock(x + 0, y + 24, z + 15, Block.getBlockById(0));
+        world.setBlock(x, y + 24, z + 15, Block.getBlockById(0));
         world.setBlock(x + 1, y + 24, z + 15, Block.getBlockById(0));
         world.setBlock(x + 2, y + 24, z + 15, Block.getBlockById(0));
         world.setBlock(x + 3, y + 24, z + 15, Block.getBlockById(0));

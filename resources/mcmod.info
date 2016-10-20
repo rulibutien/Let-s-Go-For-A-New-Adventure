@@ -3,7 +3,7 @@
   "modid": "lgfana",
   "name": "Let's Go For A New Adventure",
   "description": "Mod used to start the adventure when you'll be ready !!",
-  "version": "1.0.1",
+  "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",

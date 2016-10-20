@@ -23,7 +23,8 @@ import rulibutien.lgfana.proxy.CommonProxy;
 import static rulibutien.lgfana.common.Lgfana.MODID;
 
 
-@Mod(modid = MODID, acceptableRemoteVersions = "*")
+@Mod(modid = MODID, acceptableRemoteVersions = "*", version = "1.0.2")
+
 public class Lgfana {
 
     public static final String MODID = "lgfana";

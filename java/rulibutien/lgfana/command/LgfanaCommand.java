@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static rulibutien.lgfana.common.Lgfana.GAMERULE_GO;
+import static rulibutien.lgfana.common.Lgfana.ob;
 import static rulibutien.lgfana.gen.LgfanaSpawnGenerator.OffsetSpawnY;
 
 public class LgfanaCommand extends CommandBase {
@@ -152,6 +153,7 @@ public class LgfanaCommand extends CommandBase {
         rules.setOrCreateGameRule("doDaylightCycle", status + "");
         rules.setOrCreateGameRule("doMobSpawning", status + "");
         rules.setOrCreateGameRule(GAMERULE_GO, status + "");
+        if (ob) rules.setOrCreateGameRule("openblocks:spawn_graves", status + "");
 
         this.world.setWorldTime(0L);
 

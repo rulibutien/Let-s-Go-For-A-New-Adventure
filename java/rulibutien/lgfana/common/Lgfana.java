@@ -1,6 +1,7 @@
 package rulibutien.lgfana.common;
 
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -23,7 +24,7 @@ import rulibutien.lgfana.proxy.CommonProxy;
 import static rulibutien.lgfana.common.Lgfana.MODID;
 
 
-@Mod(modid = MODID, acceptableRemoteVersions = "*", version = "1.0.2")
+@Mod(modid = MODID, acceptableRemoteVersions = "*")
 
 public class Lgfana {
 
@@ -31,6 +32,8 @@ public class Lgfana {
 
     public static final String GAMERULE_GO = "lgfanaGo";
     private static final String GAMERULE_SETUP = "lgfanaSetUp";
+
+    public static boolean ob;
 
     @Instance(MODID)
     public static Lgfana instance;
@@ -42,20 +45,16 @@ public class Lgfana {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-
         FMLCommonHandler.instance().bus().register(new LoginEvent());
         MinecraftForge.EVENT_BUS.register(new PlacingBlock());
-
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
     }
 
     @EventHandler
@@ -69,12 +68,15 @@ public class Lgfana {
         GameRules rules = world.getGameRules();
         LgfanaSpawnGenerator spawnGenerator = new LgfanaSpawnGenerator(world);
 
+        ob = Loader.isModLoaded("OpenBlocks");
+
         if (!rules.hasRule(GAMERULE_SETUP)) {
 
             rules.setOrCreateGameRule("doDaylightCycle", "false");
             rules.setOrCreateGameRule("doFireTick", "false");
             rules.setOrCreateGameRule("doMobSpawning", "false");
             rules.setOrCreateGameRule("mobGriefing", "false");
+            if (ob) rules.setOrCreateGameRule("openblocks:spawn_graves", "false");
 
             world.setWorldTime(0L);
 

@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import rulibutien.lgfana.command.LgfanaCommand;
 import rulibutien.lgfana.command.WhatTimeIsIt;
+import rulibutien.lgfana.event.LogOutEvent;
 import rulibutien.lgfana.event.LoginEvent;
 import rulibutien.lgfana.event.PlacingBlock;
 import rulibutien.lgfana.gen.LgfanaSpawnGenerator;
@@ -50,6 +51,7 @@ public class Lgfana {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         FMLCommonHandler.instance().bus().register(new LoginEvent());
+        FMLCommonHandler.instance().bus().register(new LogOutEvent());
         MinecraftForge.EVENT_BUS.register(new PlacingBlock());
     }
 

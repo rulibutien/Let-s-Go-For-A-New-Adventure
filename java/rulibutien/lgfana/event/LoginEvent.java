@@ -39,6 +39,10 @@ public class LoginEvent {
 
         }
 
+        if (rules.getGameRuleBooleanValue(GAMERULE_GO)) {
+            rules.setOrCreateGameRule("doDaylightCycle", "true");
+        }
+
     }
 
 }

@@ -17,8 +17,7 @@ import rulibutien.lgfana.gen.LgfanaSpawnGenerator;
 import java.util.Collections;
 import java.util.List;
 
-import static rulibutien.lgfana.common.Lgfana.GAMERULE_GO;
-import static rulibutien.lgfana.common.Lgfana.ob;
+import static rulibutien.lgfana.common.Lgfana.*;
 import static rulibutien.lgfana.gen.LgfanaSpawnGenerator.OffsetSpawnY;
 
 public class LgfanaCommand extends CommandBase {
@@ -144,7 +143,7 @@ public class LgfanaCommand extends CommandBase {
 
         if (!(objective == null || status)) removeScore(score, objective);
 
-        if (status) {
+        if (status && deathCounterEnable) {
             objective = score.addScoreObjective("deaths", IScoreObjectiveCriteria.deathCount);
             displayScore(score, Scoreboard.getObjectiveDisplaySlotNumber("belowName"), objective);
             displayScore(score, Scoreboard.getObjectiveDisplaySlotNumber("list"), objective);

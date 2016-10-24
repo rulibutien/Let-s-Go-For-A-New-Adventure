@@ -6,6 +6,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.GameRules;
 
 import static rulibutien.lgfana.common.Lgfana.GAMERULE_GO;
+import static rulibutien.lgfana.common.Lgfana.timeStopsWhenEmpty;
 
 public class LogOutEvent {
 
@@ -14,9 +15,11 @@ public class LogOutEvent {
 
         GameRules rules = event.player.getEntityWorld().getGameRules();
 
-        if (rules.getGameRuleBooleanValue(GAMERULE_GO)) {
-            if (MinecraftServer.getServer().getCurrentPlayerCount() == 1) {
-                rules.setOrCreateGameRule("doDaylightCycle", "false");
+        if (timeStopsWhenEmpty) {
+            if (rules.getGameRuleBooleanValue(GAMERULE_GO)) {
+                if (MinecraftServer.getServer().getCurrentPlayerCount() == 1) {
+                    rules.setOrCreateGameRule("doDaylightCycle", "false");
+                }
             }
         }
 

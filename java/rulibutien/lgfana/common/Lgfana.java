@@ -14,6 +14,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 import rulibutien.lgfana.command.LgfanaCommand;
 import rulibutien.lgfana.command.WhatTimeIsIt;
 import rulibutien.lgfana.event.LogOutEvent;
@@ -43,9 +44,32 @@ public class Lgfana {
             serverSide = "rulibutien.lgfana.proxy.CommonProxy")
     public static CommonProxy proxy;
 
+    public static boolean timeStopsWhenEmpty;
+    public static boolean deathCounterEnable;
+    private static boolean doFireTick;
+    private static boolean mobGriefing;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+
+        Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
+
+        try {
+            cfg.load();
+            timeStopsWhenEmpty = cfg.get("Extra Features", "timeStopsWhenEmpty", true,
+                    "If true, the time will stop when the server is empty.").getBoolean(true);
+            doFireTick = cfg.get("Extra Features", "doFireTick", false,
+                    "If true, fire will spread naturally, vanilla like.").getBoolean(false);
+            mobGriefing = cfg.get("Extra Features", "mobGriefing", false,
+                    "If true, mobs will be able to grief the world (creepers explosion and endermen picking blocks).").getBoolean(false);
+            deathCounterEnable = cfg.get("Extra Features", "deathCounterEnable", true,
+                    "If true, a death counter will be created for the adventure and will be displayed in the list slot and below players' name.").getBoolean(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (cfg.hasChanged()) cfg.save();
+        }
+
     }
 
     @EventHandler
@@ -75,9 +99,9 @@ public class Lgfana {
         if (!rules.hasRule(GAMERULE_SETUP)) {
 
             rules.setOrCreateGameRule("doDaylightCycle", "false");
-            rules.setOrCreateGameRule("doFireTick", "false");
+            if (!doFireTick) rules.setOrCreateGameRule("doFireTick", "false");
             rules.setOrCreateGameRule("doMobSpawning", "false");
-            rules.setOrCreateGameRule("mobGriefing", "false");
+            if (!mobGriefing) rules.setOrCreateGameRule("mobGriefing", "false");
             if (ob) rules.setOrCreateGameRule("openblocks:spawn_graves", "false");
 
             world.setWorldTime(0L);
